@@ -1,5 +1,6 @@
 ## assert operations ##
 
+## assert testing ##
 .anerr : assert no error
     ERROR    →  assert.NoError(t, $expr$)
 
@@ -17,3 +18,22 @@
 
 .af : assert false
     BOOLEAN  →  assert.False(t, $expr$)
+
+## assert test suite ##
+.anerrTS : assert no error for test suite
+    ERROR    →  ts.Assert().NoError($expr$)
+
+.annTS : assert not nil for test suitel
+    NIL      →  ts.Assert().NotNil($expr$)
+
+.anilTS : assert nil for test suitel
+    NIL      →  ts.Assert().Nil($expr$)
+
+.aeTS : assert equal for test suitel
+    ANY      →  ts.Assert().Equal($VAR0$, $expr$)
+
+.atTS : assert true for test suitee
+    BOOLEAN  →  ts.Assert().True($expr$)
+
+.afTS : assert false for test suitee
+    BOOLEAN  →  ts.Assert().False($expr$)
