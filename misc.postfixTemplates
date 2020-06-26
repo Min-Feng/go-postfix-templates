@@ -2,7 +2,7 @@
 
 .wrap : wrap err
 	ERROR      →  errors.Wrap($expr$, "$end$")
-	
+
 .wrapf : fmt wrap err (go 1.13)
 	ERROR      →  fmt.Errorf("$VAR0$: %w", $expr$)
 

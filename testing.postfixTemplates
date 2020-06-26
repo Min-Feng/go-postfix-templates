@@ -1,22 +1,19 @@
 ## assert operations ##
 
-.assertNoerr : assert no error
-    ERROR    →  assert.NoError(t, $expr$, "$end$")
+.anerr : assert no error
+    ERROR    →  assert.NoError(t, $expr$)
 
-.assertEqual : assert equal
-    ANY      →  assert.Equal(t, $VAR0$, $expr$, "$end$")
+.ann : assert not nil
+    NIL      →  assert.NotNil(t, $expr$)
 
-.assertNil : assert nil
-    NIL      →  assert.Nil(t, $expr$, "$end$")
+.anil : assert nil
+    NIL      →  assert.Nil(t, $expr$)
 
-.assertNotNil : assert not nil
-    NIL      →  assert.NotNil(t, $expr$, "$end$")
+.ae : assert equal
+    ANY      →  assert.Equal(t, $VAR0$, $expr$)
 
-.assertTrue : assert true
-    BOOLEAN  →  assert.True(t, $expr$, "$end$")
+.at : assert true
+    BOOLEAN  →  assert.True(t, $expr$)
 
-.assertFalse : assert false
-    BOOLEAN  →  assert.False(t, $expr$, "$end$")
-
-.assertLen : assert length
-    NIL      →  assert.Len(t, $expr$, $VAR0$, "$end$")
+.af : assert false
+    BOOLEAN  →  assert.False(t, $expr$)
