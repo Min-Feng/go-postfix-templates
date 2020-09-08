@@ -19,6 +19,9 @@
 .af : assert false
     BOOLEAN  →  assert.False(t, $expr$)
 
+.ajson : assert json
+    STRING   →  assert.JSONEq(t, $VAR0$, $expr$)
+
 ## assert test suite ##
 .anerrTS : assert no error for test suite
     ERROR    →  ts.Assert().NoError($expr$)
@@ -37,3 +40,6 @@
 
 .afTS : assert false for test suitee
     BOOLEAN  →  ts.Assert().False($expr$)
+
+.ajsonTS : assert json for test suitee
+    STRING   →  ts.Assert().JSONEq(t, $VAR0$, $expr$)
